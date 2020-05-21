@@ -13,7 +13,7 @@ julia> b=TRAINX = [7,12]
 julia>TESTY = Y[123:7,:]
 
 
-function regularised_crossentropy (A,B, theta, lambda)
+julia>function regularised_crossentropy (A,B, theta, lambda)
 j=lenth(B)
 k=sigmoid(A * theta)
 regularisedlinearregression= (lambda/ (2*j))* sum(theta[2:end].^2)
@@ -22,7 +22,7 @@ return Z
 end
 
 
-function GRADIENT234 (A, B, theta, lamba, gradient )
+julia>function GRADIENT234 (A, B, theta, lamba, gradient )
 j = length (B)
 k = sigmoid(A * theta)
 gradient  = (1/j) * A' * (k - B)
@@ -35,7 +35,7 @@ l!(theta::Vector, gradient ::Vector)= GRADIENT234(A, B, theta, lambda, gradient)
 
 optimise(v, originaltheta)
 
-function cost_gradient (theta, A, B, lambda )
+julia>function cost_gradient (theta, A, B, lambda )
 j = length (B)
 
 return (theta::Array) -> begin 
@@ -44,17 +44,12 @@ storage [:] = (1/j) * (A'  *  (k .-A)) + (lambda / j) * [0';0[2;end]]
 end
 end
 
-
-
-
-
 AGE([56, 57, 37, 40], [56, 45, 59])
 
-function cost(m:: Int::Vector{C} where C<:Real)
+julia>function cost(m:: Int::Vector{C} where C<:Real)
   if (theta= 1/2 * n (theta(z)-y)2
 )
 then (1/2n (theta*x-y)^2
-
 
 
 import Pkg
