@@ -13,7 +13,7 @@ julia> b=TRAINX = [7,12]
 julia>TESTY = Y[123:7,:]
 
 
-julia>function regularised_crossentropy (A,B, theta, lambda)
+julia>function regularised_crossentropy (A, B, theta, lambda)
 j=lenth(B)
 k=sigmoid(A * theta)
 regularisedlinearregression= (lambda/ (2*j))* sum(theta[2:end].^2)
@@ -22,13 +22,16 @@ return Z
 end
 
 
-julia>function GRADIENT234 (A, B, theta, lamba, gradient )
+julia>function GRADIENT234 (A, B, lamba, theta, gradient )
 j = length (B)
 k = sigmoid(A * theta)
 gradient  = (1/j) * A' * (k - B)
 gradient [2:end] = gradient [2:end] + (lambda/j) * theta[2:end]
 return gradient 
 end
+
+function(f:Q (m+1)*n)
+Q=(1/2*n) * (theta * v + y)^2)
 
 v(theta::Vector) = cost (A,B, theta, lambda)
 l!(theta::Vector, gradient ::Vector)= GRADIENT234(A, B, theta, lambda, gradient)
@@ -60,7 +63,7 @@ actualmatrix = ConfusionMatrix([data, classlabels= ["Row",  "age", "job", "marit
 q = reprmime("text/html", actualmatrix)
 
 
-data= DataFrame= (X=[56, 57, 37, 40, 56, 45, 59, 41], Y=[24, 25, 57, 62, 64, 36, 37, 29])
+data= DataFrame(X=[56, 57, 37, 40, 56, 45, 59, 41], Y=[24, 25, 57, 62, 64, 36, 37, 29])
 
 e = fit(LassoModel, @formla(Y + X), 
 StatsModels.TableRegressionModel {LassoModel{LinearModel{GLM.LmResp{Array {Float64,1}},GL
