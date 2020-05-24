@@ -13,7 +13,7 @@ julia> b=TRAINX = [7,12]
 julia>TESTY = Y[123:7,:]
 
 
-julia>function regularised_crossentropy (A, B, theta, lambda)
+julia> function regularised_crossentropy (A, B, theta, lambda)
 j=lenth(B)
 k=sigmoid(A * theta)
 regularisedlinearregression= (lambda/ (2*j))* sum(theta[2:end].^2)
@@ -22,23 +22,23 @@ return Z
 end
 
 
-julia>function GRADIENT234 (A, B, lamba, theta, gradient )
+julia> function GRADIENTNAME (A, B, lamba, theta, gradientamount )
 j = length (B)
 k = sigmoid(A * theta)
-gradient  = (1/j) * A' * (k - B)
-gradient [2:end] = gradient [2:end] + (lambda/j) * theta[2:end]
-return gradient 
+gradientamount   = (1/j) * A' * (k - B)
+gradientamount [2:end] = gradient [2:end] + (lambda/j) * theta[2:end]
+return gradientamount 
 end
 
-function(f:Q (m+1)*n)
+julia> function(f:Q (m+1)*n),
 Q=(1/2*n) * (theta * v + y)^2)
 
-v(theta::Vector) = cost (A,B, theta, lambda)
-l!(theta::Vector, gradient ::Vector)= GRADIENT234(A, B, theta, lambda, gradient)
+julia> v(theta::Vector) = regularised_crossentropy (A, B, theta, lambda),
+l!(theta::Vector, gradientamount ::Vector)= GRADIENTNAME(A, B, theta, lambda, gradientamount)
 
-optimise(v, originaltheta)
+julia> optimise(v, originaltheta)
 
-julia>function cost_gradient (theta, A, B, lambda )
+julia> function cost_gradient (theta, A, B, lambda )
 j = length (B)
 
 return (theta::Array) -> begin 
@@ -49,7 +49,7 @@ end
 
 AGE([56, 57, 37, 40], [56, 45, 59])
 
-julia>function cost(m:: Int::Vector{C} where C<:Real)
+julia> function regularised_crossentropy(m:: Int::Vector{C} where C<:Real)
   if (theta= 1/2 * n (theta(z)-y)2
 )
 then (1/2n (theta*x-y)^2
@@ -58,19 +58,19 @@ then (1/2n (theta*x-y)^2
 import Pkg
 Pkg.add("ConfusionMatrices")
 
-bank-campaign= [1 2 3 4 5 6 7 8 9 10; 56 57 37 40 56 45 59 41 24 25;housemaid services services admin. services services admin. blue-collar technician services; married married married married married married married married single single; basic.4y high.school high.school basic.6y high.school basic.9y professional.course unknown professional.course high.school; no unknown no no no unknown  no unknown no no]
+bank-campaign = [1 2 3 4 5 6 7 8 9 10; 56 57 37 40 56 45 59 41 24 25;housemaid services services admin. services services admin. blue-collar technician services; married married married married married married married married single single; basic.4y high.school high.school basic.6y high.school basic.9y professional.course unknown professional.course high.school; no unknown no no no unknown  no unknown no no]
 actualmatrix = ConfusionMatrix([data, classlabels= ["Row",  "age", "job", "marital", "education", "default"])
 q = reprmime("text/html", actualmatrix)
 
 
-data= DataFrame(X=[56, 57, 37, 40, 56, 45, 59, 41], Y=[24, 25, 57, 62, 64, 36, 37, 29])
+julia> data= DataFrame(X=[56, 57, 37, 40, 56, 45, 59, 41], Y=[24, 25, 57, 62, 64, 36, 37, 29])
 
-e = fit(LassoModel, @formla(Y + X), 
+julia> e = fit(LassoModel, @formula(Y + X), 
 StatsModels.TableRegressionModel {LassoModel{LinearModel{GLM.LmResp{Array {Float64,1}},GL
 
 Y + X
 
-coef(e)
+julia> coef(e)
 
 
 
